@@ -19,7 +19,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=1000)
     bio = models.CharField(max_length=100)
-    image = models.ImageField(upload_to="user_images", default="default.jpg")
+    image = models.CharField(max_length=50, default="1")
     verified = models.BooleanField(default=False)
 
 def create_user_profile(sender, instance, created, **kwargs):
